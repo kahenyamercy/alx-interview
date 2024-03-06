@@ -1,15 +1,16 @@
-from math import factorial
-
 def pascal_triangle(n):
-    """Return the nth row of Pascal's triangle as a list of lists."""
+    """Return a list of lists representing Pascal's triangle up to the nth row."""
     if n <= 0:
         return []
-    
+
     triangle = []
     for i in range(n):
-        row = []
-        for j in range(i + 1):
-            # Use the formula for Pascal's triangle: n choose k = n! / (k! * (n - k)!)
-            row.append(factorial(i) // (factorial(j) * factorial(i - j)))
+        row = [1]  # First element of each row is always 1
+        for j in range(1, i):
+            # Each element (except the first and last) is the sum of the two elements above it
+            row.append(triangle[i-1][j-1] + triangle[i-1][j])
+        if i > 0:
+            row.append(1)  # Last element of each row is always 1
         triangle.append(row)
+
     return triangle
