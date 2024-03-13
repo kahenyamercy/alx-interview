@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Lockboxes challenge"""
+
 
 def canUnlockAll(boxes):
     """
