@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
+"""Log parsing"""
 
 import sys
+
 
 def print_stats(total_size, status_counts):
     print(f"Total file size: {total_size}")
     for status_code, count in sorted(status_counts.items()):
         print(f"{status_code}: {count}")
+
 
 def main():
     total_size = 0
@@ -33,6 +36,7 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_counts)
         sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
