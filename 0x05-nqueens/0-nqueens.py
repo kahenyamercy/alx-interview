@@ -16,7 +16,7 @@ def is_safe(board, row, col, N):
     for i in range(row):
         if board[i][col] == 1 or \
             (col-row+i >= 0 and board[i][col-row+i] == 1) or \
-            (col+row-i < N and board[i][col+row-i] == 1):
+                (col+row-i < N and board[i][col+row-i] == 1):
             return False
     return True
 
